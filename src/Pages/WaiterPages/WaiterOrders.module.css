@@ -1,0 +1,17 @@
+.card {
+    width: 18rem;
+    margin: auto;
+}
+
+.cardContainer{
+    flex: 0 0 33.3333%;
+    margin-top: 20px;
+
+}
+
+.cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+}

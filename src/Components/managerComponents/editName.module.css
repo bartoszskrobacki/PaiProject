@@ -1,0 +1,58 @@
+
+.editing{
+
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
+
+.notediting{
+    background: #F8F8F0;
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-bottom: darkgrey 1px solid;
+}
+
+.textContainer{
+    width: 20%;
+    margin-left: 50px;
+    font-weight: bold;
+    font-family: Lato, sans-serif;
+    align-items: flex-start;
+    display: flex;
+}
+
+
+
+.itemName{
+    font-family: Lato, sans-serif;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    width: 70%;
+}
+
+.formAndButtonContainer{
+    font-family: Lato, sans-serif;
+    justify-content: space-between;
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    width: 70%;
+}
+
+.buttonContainer{
+    display: flex;
+align-items: flex-end;
+    height: 100px;
+}
+
