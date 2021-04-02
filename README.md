@@ -35,9 +35,9 @@ npm install
 npm start
 ```
 
-## Screenshots
+## Preview
 ![Waiter screen](./images/webApp1.png)
-![Chef screen](./images/webApp1.png)
+![Chef screen](./images/webApp2.png)
 ## Contact
 **bartoszskrobacki@gmail.com**
 
