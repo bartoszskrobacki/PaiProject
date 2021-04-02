@@ -5,7 +5,7 @@
 
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Screenshots](#screenshots)
+* [Preview](#preview)
 * [Setup](#setup)
 * [Contact](#contact)
 
@@ -24,7 +24,7 @@ Restaurant web application uses a lot of open source project to work properly:
 
 
 
-## Installation
+## Setup
 
 Restaurant web application requires [Node.js](https://nodejs.org/) v10+ to run.
 In project directory, you can run:
@@ -36,8 +36,9 @@ npm start
 ```
 
 ## Preview
-![Waiter screen](./images/webApp1.png)
-![Chef screen](./images/webApp2.png)
+![Waiter screen](./images/waiterScreen.png)
+![Chef screen](./images/chefScreen.png)
+![Manager screen](./images/managerScreen.png)
 ## Contact
 **bartoszskrobacki@gmail.com**
 
