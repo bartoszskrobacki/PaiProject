@@ -35,11 +35,11 @@ npm start
 ```
 
 ## Preview
-### `Waiter Screen for orders'
+### Waiter Screen for orders
 ![Waiter screen](./images/waiterScreen.png)
-Chef Orders
+### Chef Screen for orders
 ![Chef screen](./images/chefScreen.png)
-`Manager menu'
+### Manager Menu
 ![Manager screen](./images/managerScreen.png)
 ## Contact
 **bartoszskrobacki@gmail.com**
