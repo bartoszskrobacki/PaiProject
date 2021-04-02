@@ -23,7 +23,6 @@ Restaurant web application uses a lot of open source project to work properly:
 
 
 
-
 ## Setup
 
 Restaurant web application requires [Node.js](https://nodejs.org/) v10+ to run.
@@ -36,13 +35,16 @@ npm start
 ```
 
 ## Preview
+### `Waiter Screen for orders'
 ![Waiter screen](./images/waiterScreen.png)
+Chef Orders
 ![Chef screen](./images/chefScreen.png)
+`Manager menu'
 ![Manager screen](./images/managerScreen.png)
 ## Contact
 **bartoszskrobacki@gmail.com**
 
-**Free Software, Hell Yeah!**
+
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
