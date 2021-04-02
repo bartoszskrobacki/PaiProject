@@ -36,8 +36,8 @@ npm start
 ```
 
 ## Screenshots
-![Waiter screen](./images/webApp1.jpg)
-![Chef screen](./images/webApp1.jpg)
+![Waiter screen](./images/webApp1.png)
+![Chef screen](./images/webApp1.png)
 ## Contact
 **bartoszskrobacki@gmail.com**
 
