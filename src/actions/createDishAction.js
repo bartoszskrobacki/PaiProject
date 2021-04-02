@@ -8,7 +8,7 @@ export const createDishAction = (newDish) => {
 
         firestore.collection('menu').add({
             name: newDish.name,
-            price: newDish.price,
+            price: parseFloat(newDish.price),
             category: newDish.category,
             placeToPrepare: newDish.placeToPrepare
         }).then(() => {

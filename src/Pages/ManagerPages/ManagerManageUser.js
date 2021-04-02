@@ -16,8 +16,10 @@ const ManagerManageUser = props => {
         <div>
             <div className={classes.itemsContainer}>
                 {props.users.map(user =>
-                    <div key={user.id}>
-                        <h5>{user.firstName + " " + user.lastName}</h5>
+                    <div className={classes.singleItem} key={user.id}>
+                        <h5>{user.firstName + " " + user.lastName}  <ion-icon
+
+                            name="close-circle"></ion-icon></h5>
                         <div className={classes.itemContainer}>
                         <EditPhoneNumber user={user} updateAction={props.updateAction}/>
                         <EditRole user={user}  updateAction={props.updateAction} />

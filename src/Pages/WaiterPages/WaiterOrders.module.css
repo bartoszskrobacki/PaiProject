@@ -4,8 +4,15 @@
 }
 
 .cardContainer{
-    flex: 0 0 33.3333%;
+    flex: 0 0 20%;
     margin-top: 20px;
+
+}
+
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
 }
 
@@ -13,5 +20,5 @@
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }

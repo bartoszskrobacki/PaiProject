@@ -1,13 +1,20 @@
 .itemsContainer{
+
     font-family: Lato, sans-serif;
     width: 60%;
-    margin: auto;
+    margin: 20px auto;
+
 
 }
 .itemContainer{
 
-   border-bottom: darkgrey 1px solid;
+
 }
 
-
+.singleItem{
+    margin-top: 10px;
+    box-shadow: 2px 4px 0 0 rgba(0,0,0,0.2);
+    border-bottom: darkgrey 1px solid;
+    border-right: darkgrey 1px solid;
+}
 

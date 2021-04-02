@@ -6,7 +6,7 @@ export const completeOrder = (Order) => {
         const firestore = getFirebase().firestore();
 
         const  docRef = getFirebase().firestore().collection('currentOrders').doc(Order.id);
-
+        console.log("ID" + Order.id);
         firestore.collection('completedOrders').doc(Order.id).set(
             Order
     ).then(()=> {
@@ -17,7 +17,6 @@ export const completeOrder = (Order) => {
     console.log(err);
     dispatch({ type: SIGN_UP_ERROR})
 })
-
 
     }
 

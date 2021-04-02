@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Button, Form, Col} from "react-bootstrap";
-import classes from "./editName.module.css";
+import classes from "./../../Pages/logInPage.module.css"
 
 import {connect} from "react-redux";
 
@@ -60,7 +60,7 @@ const ManagerAddNewUser = props => {
         else if(userState.lastName !== "undefined"){
             if(!userState.lastName.match(/^[a-zA-Z]+$/)){
                 formIsValid = false;
-                errors['lastName']= "Only numbers!";
+                errors['lastName']= "Nazwisko powinno zawierać wyłącznie litery!";
             }
         }
         if(!userState.email){
@@ -101,66 +101,62 @@ const ManagerAddNewUser = props => {
 
 
     return (
-        <div>
-            <Form>
-                <Form.Row>
-                    <Col xs="auto">
-                        <Form.Control type="text" name="firstName" onChange={e => InputHandler(e)} placeholder="First Name"  />
-                        <small>{ errors.firstName ? errors.firstName : "" }</small>
-                    </Col>
-                </Form.Row>
-            </Form>
-            <Form>
-                <Form.Row>
-                    <Col xs="auto">
-                        <Form.Control type="text" name="lastName" onChange={e => InputHandler(e)} placeholder="Last Name"  />
-                        <small>{ errors.lastName ? errors.lastName : "" }</small>
-                    </Col>
-                </Form.Row>
-            </Form>
-            <Form>
-                <Form.Row>
-                    <Col xs="auto">
-                        <Form.Control name="password" type="password" onChange={e => InputHandler(e)} placeholder="Password"  />
-                        <small>{ errors.password ? errors.password : "" }</small>
-                    </Col>
-                </Form.Row>
-            </Form>
-            <Form>
-                <Form.Row>
-                    <Col xs="auto">
-                        <Form.Control name="role" onChange={e => InputHandler(e)} as="select" size="sm" custom>
-                            <option value="Chef">Chef</option>
-                            <option value="Waiter">Waiter</option>
-                            <option value="Manager">Manager</option>
-                        </Form.Control>
-                    </Col>
-                </Form.Row>
-            </Form>
-            <Form>
-                <Form.Row>
-                    <Col xs="auto">
-                        <Form.Control type="text" name="email" onChange={e => InputHandler(e)} placeholder="Email"  />
-                        <small>{ errors.email ? errors.email : "" }</small>
-                    </Col>
-                </Form.Row>
-            </Form>
-            <Form>
-                <Form.Row>
-                    <Col xs="auto">
-                        <Form.Control type="text" name="phoneNumber" onChange={e => InputHandler(e)} placeholder="Phone Number"  />
-                        <small>{ errors.phoneNumber ? errors.phoneNumber : "" }</small>
-                    </Col>
-                </Form.Row>
-            </Form>
+        <div className={classes.container}>
+            <div className="container">
 
-            <div className={classes.buttonContainer}>
-                <Button
-                    className="mt-auto font-weight-bold"
-                    variant="dark"
-                    onClick={()=>{submitHandler()}}>
-                    Confirm
-                </Button>
+                <form className="white" onSubmit={submitHandler}>
+                    <h5 className="grey-text text-darken-3">Rejestracja użytkowników</h5>
+                    <div className="input-field">
+                        <label htmlFor="email">Imie</label>
+                        <input type="text" name="firstName" onChange={e => InputHandler(e)} />
+                        <div className="red-text"><small>{ errors.firstName ? errors.firstName : "" }</small></div>
+                    </div>
+                    <div className="input-field">
+                        <label htmlFor="email">Nazwisko</label>
+                        <input type="text" name="lastName" onChange={e => InputHandler(e)} />
+                        <div className="red-text">  <small>{ errors.lastName ? errors.lastName : "" }</small></div>
+                    </div>
+
+                    <div className="input-field">
+                        <label htmlFor="password">Hasło</label>
+                        <input  name="password" type="password" id='password' onChange={e => InputHandler(e)} />
+
+                    </div>
+
+                    <div className="input-field">
+                        <label htmlFor="email">Email</label>
+                        <input name="email" type="email" id='email' onChange={e => InputHandler(e)} />
+                        <div className="red-text">  <small>{ errors.email ? errors.email : "" }</small></div>
+                    </div>
+                    <div className="input-field">
+                        <label htmlFor="email">Numer telefonu</label>
+                        <input type="text" name="phoneNumber" onChange={e => InputHandler(e)}  />
+                        <div className="red-text"><small>{ errors.phoneNumber ? errors.phoneNumber : "" }</small></div>
+                    </div>
+                    <Form>
+                        <Form.Row>
+                            Rola:
+                            <Col xs="auto">
+                                <Form.Control name="role" onChange={e => InputHandler(e)} as="select" size="sm" custom>
+                                    <option value="Chef">Kucharz</option>
+                                    <option value="Waiter">Kelner</option>
+                                    <option value="Manager">Manager</option>
+                                </Form.Control>
+                            </Col>
+                        </Form.Row>
+                    </Form>
+
+                    <div className="input-field">
+                        <Button className="mt-auto font-weight-bold"
+                                variant="dark"
+                                block
+                                onClick={()=>submitHandler()}>Zarejstruj nowego użytkownika</Button>
+
+
+
+                    </div>
+                </form>
+
             </div>
         </div>
     );

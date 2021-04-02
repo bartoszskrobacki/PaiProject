@@ -1,7 +1,5 @@
 import { ADD_PRODUCT_BASKET} from "./types";
-import {ADD_PRODUCT_ERROR} from "./types";
-import {getFirebase} from "react-redux-firebase";
-import {getFirestore} from "redux-firestore";
+
 
 export const addAction = (cartItems, product) => {
 

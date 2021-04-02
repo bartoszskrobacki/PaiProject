@@ -6,7 +6,7 @@ import {Home} from "../../Pages/Home" // change it to your custom component
 const locationHelper = locationHelperBuilder({});
 const browserHistory = createBrowserHistory();
 
-export const UserIsAuthenticated = connectedRouterRedirect({
+export const UserIsManager = connectedRouterRedirect({
     wrapperDisplayName: 'UserIsAuthenticated',
     LoadingComponent: Home,
     allowRedirectBack: false,
@@ -15,11 +15,43 @@ export const UserIsAuthenticated = connectedRouterRedirect({
     authenticatingSelector: ({ firebase: { auth, profile, isInitializing } }) =>
         !auth.isLoaded || !profile.isLoaded || isInitializing === true,
     authenticatedSelector: ({ firebase: { profile } }) =>
-        profile.role === 'Manager',
+        profile.role === 'Manager' ,
     redirectAction: newLoc => dispatch => {
         browserHistory.replace(newLoc)
         dispatch({ type: 'UNAUTHED_REDIRECT' })
-    }
+    },
+});
+
+export const UserIsWaiter = connectedRouterRedirect({
+    wrapperDisplayName: 'UserIsAuthenticated',
+    LoadingComponent: Home,
+    allowRedirectBack: false,
+    redirectPath: (state, ownProps) =>
+        locationHelper.getRedirectQueryParam(ownProps) || '/login',
+    authenticatingSelector: ({ firebase: { auth, profile, isInitializing } }) =>
+        !auth.isLoaded || !profile.isLoaded || isInitializing === true,
+    authenticatedSelector: ({ firebase: { profile } }) =>
+        profile.role === 'Waiter' || profile.role ==='Manager',
+    redirectAction: newLoc => dispatch => {
+        browserHistory.replace(newLoc)
+        dispatch({ type: 'UNAUTHED_REDIRECT' })
+    },
+});
+
+export const UserIsChef = connectedRouterRedirect({
+    wrapperDisplayName: 'UserIsAuthenticated',
+    LoadingComponent: Home,
+    allowRedirectBack: false,
+    redirectPath: (state, ownProps) =>
+        locationHelper.getRedirectQueryParam(ownProps) || '/login',
+    authenticatingSelector: ({ firebase: { auth, profile, isInitializing } }) =>
+        !auth.isLoaded || !profile.isLoaded || isInitializing === true,
+    authenticatedSelector: ({ firebase: { profile } }) =>
+        profile.role === 'Chef' || profile.role ==='Manager',
+    redirectAction: newLoc => dispatch => {
+        browserHistory.replace(newLoc)
+        dispatch({ type: 'UNAUTHED_REDIRECT' })
+    },
 });
 
 export const UserIsNotAuthenticated = connectedRouterRedirect({

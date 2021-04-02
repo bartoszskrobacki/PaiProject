@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import {Button, Form, Col} from "react-bootstrap";
-import classes from "./editName.module.css";
+
 
 import {connect} from "react-redux";
 
-
+import classes from "../../Pages/logInPage.module.css"
 import {compose} from "redux";
 import {createDishAction} from "../../actions/createDishAction";
 import {firestoreConnect} from "react-redux-firebase";
@@ -14,7 +14,7 @@ const ManagerAddNewDish = props => {
     const [dishState, setState] = useState({
         name: "",
         category: "Obiad",
-        price: "",
+        price: 0,
         placeToPrepare: "Kuchnia"
     });
 
@@ -77,54 +77,56 @@ const ManagerAddNewDish = props => {
 
     return (
         <div>
+            <div className={classes.container}>
+                <div className="container">
+                    <form className="white" onSubmit={submitHandler}>
+                        <h5 className="grey-text text-darken-3">Dodaj nową potrawę</h5>
+                        <div className="input-field">
+                            <label htmlFor="password">Nazwa</label>
+                            <input type="text" name="name" id="name" onChange={e => InputHandler(e)} onChange={e => InputHandler(e)} />
+                            <small>{ errors.name ? errors.name : "" }</small>
+                        </div>
+                        <div className="input-field">
+                            <label htmlFor="email">Cena</label>
+                            <input type="text" name="price" id="price" onChange={e => InputHandler(e)}  />
+                            <small>{ errors.price ? errors.price : "" }</small>
+                        </div>
+                        <Form>
+                            <Form.Row>Kategoria:
+                                <Col xs="auto">
+                                    <Form.Control name="category" onChange={e => InputHandler(e)} as="select" size="sm" custom>
+                                        <option value="Zupa">Zupa</option>
+                                        <option value="Obiad">Obiad</option>
+                                        <option value="Zestaw Obiadowy">Zestaw Obiadowy</option>
+                                        <option value="Deser">Deser</option>
+                                        <option value="Napój">Napój</option>
+                                    </Form.Control>
+                                </Col>
+                            </Form.Row>
+                        </Form>
+                        <Form>
 
-            <Form>
-                <Form.Row>
-                    <Col xs="auto">
-                        <Form.Control type="text" name="name" onChange={e => InputHandler(e)} placeholder="name"  />
-                        <small>{ errors.name ? errors.name : "" }</small>
-                    </Col>
-                </Form.Row>
-            </Form>
-            <Form>
-                <Form.Row>
-                    <Col xs="auto">
-                        <Form.Control type="text" name="price" onChange={e => InputHandler(e)} placeholder="price"  />
-                        <small>{ errors.price ? errors.price : "" }</small>
-                    </Col>
-                </Form.Row>
-            </Form>
-            <Form>
-                <Form.Row>
-                    <Col xs="auto">
-                        <Form.Control name="category" onChange={e => InputHandler(e)} as="select" size="sm" custom>
-                            <option value="Zupa">Zupa</option>
-                            <option value="Obiad">Obiad</option>
-                            <option value="Zestaw Obiadowy">Zestaw Obiadowy</option>
-                            <option value="Deser">Deser</option>
-                            <option value="Napój">Napój</option>
-                        </Form.Control>
-                    </Col>
-                </Form.Row>
-            </Form>
-            <Form>
-            <Form.Row>
-                <Col xs="auto">
-                    <Form.Control name="placeToPrepare" onChange={e => InputHandler(e)} as="select" size="sm" custom>
-                        <option value="Kuchnia">Kuchnia</option>
-                        <option value="Bar">Bar</option>
-                    </Form.Control>
-                </Col>
-            </Form.Row>
-        </Form>
-                    <div className={classes.buttonContainer}>
-                        <Button
-                            className="mt-auto font-weight-bold"
-                            variant="dark"
-                            onClick={()=>{submitHandler()}}>
-                            Confirm
-                        </Button>
-                    </div>
+                            <Form.Row>  Miejsce przygotowania:
+                                <Col xs="auto">
+                                    <Form.Control name="placeToPrepare" onChange={e => InputHandler(e)} as="select" size="sm" custom>
+                                        <option value="Kuchnia">Kuchnia</option>
+                                        <option value="Bar">Bar</option>
+                                    </Form.Control>
+                                </Col>
+                            </Form.Row>
+                        </Form>
+                        <div className="input-field">
+                            <Button className="mt-auto font-weight-bold"
+                                    variant="dark"
+                                    block
+                                    onClick={()=>submitHandler()}>Dodaj nową potrawę</Button>
+
+                        </div>
+                    </form>
+
+
+        </div>
+            </div>
         </div>
     );
 };

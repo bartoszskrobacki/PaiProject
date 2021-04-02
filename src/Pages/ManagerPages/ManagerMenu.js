@@ -5,12 +5,12 @@ import {Link} from "react-router-dom";
 export const ManagerMenu = (props) => {
     return (
         <div className="container" style={{margin: "auto"}}>
-            <MenuOption>Create new Order</MenuOption>
-            <MenuOption>Check List Of orders</MenuOption>
-            <MenuOption>Check Reports</MenuOption>
-            <Link to={"managerUserMenu"}><MenuOption>Manage Users</MenuOption></Link>
-           <Link to={"managerDishMenu"}><MenuOption>Manage Dishes</MenuOption></Link>
-            <MenuOption>Log out</MenuOption>
+            <Link to={"/waiterChooseTable"} > <MenuOption>Stwórz nowe zamówienie</MenuOption></Link>
+            <Link to={"/managerOrders"} >  <MenuOption>Sprawdź listę aktualnych zamówień</MenuOption></Link>
+            <Link to="managerReports"><MenuOption>Zobacz raporty</MenuOption></Link>
+            <Link to="managerUserMenu"><MenuOption>Zarządzaj użytkownikami</MenuOption></Link>
+           <Link to="managerDishMenu"><MenuOption>Zarządzaj daniami</MenuOption></Link>
+            <MenuOption>Wyloguj się</MenuOption>
         </div>
     );
 }

@@ -12,14 +12,15 @@ export const addOrder = (listOfOrders1, neworder) => {
 
         let productAlreadyinCart = false;
         let tableAlreadyinList = false;
-        let orderid;
+        let costOfOldList = 0;
 
         listOfOrders.forEach((order) =>
         {
 
             if(order.table === neworder.table) {
                 tableAlreadyinList = true;
-
+                costOfOldList = order.orderCost;
+                neworder.orderCost = neworder.orderCost + costOfOldList;
                 order.listOfCurrentThings.forEach((product) =>{
 
                     neworder.listOfCurrentThings.forEach((meal) => {
@@ -58,14 +59,14 @@ export const addOrder = (listOfOrders1, neworder) => {
             neworder = {...neworder,  waiterFirstName: getState().firebase.profile.firstName,
                 waiterLastName: getState().firebase.profile.lastName,
                 waiterID: getState().firebase.auth.uid,
-                createdAt: new Date() };
+                createdAt: new Date()};
 
 
 
             firestore.collection('currentOrders').add({
                 ...neworder
             }).then((docRef)=> {
-             //   listOfOrders.push({...neworder, id: docRef.id});
+                //   listOfOrders.push({...neworder, id: docRef.id});
                 console.log(docRef.id);
                 dispatch({
                     type: ADD_ORDER,

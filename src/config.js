@@ -13,10 +13,11 @@ export const config = {
     measurementId: "G-HMNKLW71EL"
 };
 
-if (!firebase.apps.length) {
-    firebase.initializeApp(config);
-}
 
-firebase.firestore();
+
+    firebase.initializeApp(config);
+
+
+export const db = firebase.firestore();
 
 export default firebase;

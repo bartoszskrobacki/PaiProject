@@ -1,0 +1,22 @@
+.mainContainer{
+    display: flex;
+}
+
+.leftRow {
+    display: flex;
+    flex-direction: column;
+}
+
+.firstLeftRow {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.secondLeftRow {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}

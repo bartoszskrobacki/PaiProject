@@ -22,10 +22,6 @@ const ChefOrders = props => {
                         )
                         }
                     </ListGroup>
-                    <Button className="mt-auto font-weight-bold"
-                            variant="dark"
-                            block
-                            onClick={() => props.completeOrder(order)}>Complete Order!</Button>
                 </Card>
 
                </div>

@@ -42,7 +42,7 @@ export const EditPrice = (props) => {
                         <Button
                             className="mt-auto font-weight-bold"
                             variant="dark"
-                            onClick={()=>props.action('menu',props.meal.id,parseInt(price), 'price')  & endEditing()}>
+                            onClick={()=>props.action('menu',props.meal.id,parseFloat(price), 'price')  & endEditing()}>
                             Confirm
                         </Button>
                         <Button

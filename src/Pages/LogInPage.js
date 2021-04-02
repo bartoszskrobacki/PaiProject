@@ -6,7 +6,7 @@ import {authAction} from "../actions/authAction";
 import {signOut} from "../actions/signOutAction";
 import {Button} from "react-bootstrap";
 import classes from "./logInPage.module.css"
-
+import {Redirect} from "react-router-dom"
 
 const LogInPage = props => {
    const [credentials, setCredentials] = useState({
@@ -64,28 +64,35 @@ const LogInPage = props => {
 
         const { authError, auth, profile } = props;
 
+    if (profile.role === 'Manager')
+        return <Redirect to='/managerMenu'/>;
+    if (profile.role === 'Waiter')
+        return <Redirect to='/waiterMenu'/>;
+    if (profile.role === 'Chef')
+        return <Redirect to='/chefMenu'/>;
+    if (!profile.isLoaded)
+        return null;
 
-
-        return (
+    return (
 
             <div className={classes.container}>
             <div className="container">
                 <form className="white" onSubmit={submitHandler}>
-                    <h5 className="grey-text text-darken-3">Sign In</h5>
+                    <h5 className="grey-text text-darken-3">Logowanie</h5>
                     <div className="input-field">
                         <label htmlFor="email">Email</label>
                         <input name="email" type="email" id='email' onChange={e => inputHandler(e)} />
                         <small>{ errors.email ? errors.email : "" }</small>
                     </div>
                     <div className="input-field">
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password">Hasło</label>
                         <input  name="password" type="password" id='password' onChange={e => inputHandler(e)} />
                     </div>
                     <div className="input-field">
                         <Button className="mt-auto font-weight-bold"
                                 variant="dark"
                                 block
-                        onClick={()=>submitHandler()}>Login</Button>
+                        onClick={()=>submitHandler()}>Zaloguj się</Button>
                         <div className="center red-text">
                             { authError ? <p>{authError}</p> : null }
                         </div>

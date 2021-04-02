@@ -3,7 +3,7 @@ import {Button} from "react-bootstrap";
 
 export const MenuOption = (props) => {
     return (
-        <div className="container" style={{width: "60%", paddingTop: 10}}>
+        <div className="container" style={{width: "80%", paddingTop: 10}}>
             <Button
                 className="mt-auto font-weight-bold"
                 variant="dark"

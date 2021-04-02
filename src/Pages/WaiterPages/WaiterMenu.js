@@ -5,9 +5,10 @@ import {Link} from "react-router-dom";
 export const WaiterMenu = (props) => {
     return (
         <div className="container" style={{margin: "auto"}}>
-        <Link to={"/waiterChooseTable"} ><MenuOption>Create new Order</MenuOption></Link>
-         <Link to={"/waiterOrders"} ><MenuOption>Check List of Orders</MenuOption></Link>
-            <MenuOption>Log out</MenuOption>
+        <Link to={"/waiterChooseTable"} ><MenuOption>Stwórz nowe zamówienie</MenuOption></Link>
+         <Link to={"/waiterOrders"} ><MenuOption>Sprawdź listę zamówień</MenuOption></Link>
+            <Link to={"/waiterDailyReport"}><MenuOption>Sporządź mój dzieny raport</MenuOption></Link>
+            <MenuOption>Wyloguj się</MenuOption>
         </div>
     );
 };

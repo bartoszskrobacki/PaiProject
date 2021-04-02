@@ -15,7 +15,7 @@ const ManagerManageDishes = props => {
         <div>
             <div className={classes.itemsContainer}>
                                 {props.menu.map(meal =>
-                                    <div key={meal.id}>
+                                    <div className={classes.singleItem} key={meal.id}>
                                        <h5>{meal.name}</h5>
                                         <div className={classes.itemContainer}>
                                             <EditName meal={meal} updateAction={props.updateAction}  />
